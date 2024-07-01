@@ -1,4 +1,4 @@
-# Algorithm_study🍀
+# AlgorithmStudy🍀
 
 ## **일시**
 
