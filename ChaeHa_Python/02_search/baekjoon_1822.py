@@ -14,7 +14,7 @@ CountList = []
 #A 집합을 순회하며 B에 같은 값이 있는지 확인
 for AInt in A:
     low = 0
-    high = len(B) - 1
+    high = Bn - 1
     exist = 0
 
     #같은 값 확인은 이진 탐색으로 진행
