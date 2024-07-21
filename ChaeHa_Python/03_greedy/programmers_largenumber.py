@@ -1,18 +1,14 @@
 def solution(number, k):
-    answer = number
-    count = k
-    for i in range(k):
-      ch = False
-      for j in range(len(answer) - 1):
-        if answer[j] < answer[j + 1]:
-          count -= 1
-          answer = answer[:j] + answer[j + 1:]
-          ch = True
-          break
-      if not ch:
-        break
+    number = list(number)
+    stack = [number[0]]
+    for num_idx in range(1,len(number)):
+            while len(stack) and stack[-1] < number[num_idx]:
+                stack.pop()
+                k -= 1
+                if k <= 0:
+                    stack.extend(number[num_idx:])
+                    return ''.join(stack)
+            stack.append(number[num_idx])
+    return ''.join(stack[:-k])
 
-    for i in range(count):
-      answer = answer.replace(min(answer), '',1)
-
-    return answer
+print(solution("4177252841", 4))
