@@ -1,7 +1,11 @@
 from collections import deque
 def solution(tickets):
-    answer = ["ICN"]
-    tripdic = {}
+    tripSet = set()
+    for st, en in tickets:
+        tripSet.add(st)
+        tripSet.add(en)
+
+    tripdic = {x : [] for x in tripSet}
     tickets.sort()
     for starttrip, endtrip in tickets:
         if starttrip not in tripdic.keys():
@@ -9,16 +13,8 @@ def solution(tickets):
         else:
             tripdic[starttrip].append(endtrip)
 
-    queue = deque(["ICN"])
-    while queue:
-        start = queue.popleft()
-        for next_node in tripdic[start]:
-            if next_node not in answer:
-                answer.add(next_node)
-                queue.append(next_node)
 
-
-    return answer
 
 print(solution([["ICN", "JFK"], ["HND", "IAD"], ["JFK", "HND"]]))
 print(solution([["ICN", "SFO"], ["ICN", "ATL"], ["SFO", "ATL"], ["ATL", "ICN"], ["ATL","SFO"]]))
+print(solution([["ICN", "D"], ["D", "ICN"], ["ICN", "B"]]))

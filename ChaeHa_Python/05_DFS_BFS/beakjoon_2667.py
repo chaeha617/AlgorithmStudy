@@ -1,12 +1,13 @@
 N = int(input())
+
 apartment = []
 stack = []
 answer = []
+
 way = [(0,-1), (0,1), (-1,0), (1,0)]
 
 for _ in range(N):
   apartment.append(list(map(int, list(input()))))
-
 
 cn = 2
 for i in range(N):

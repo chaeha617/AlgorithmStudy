@@ -2,6 +2,7 @@ computerCnt = int(input())
 wormCnt = int(input())
 
 computerNetwork = {x:[] for x in range(1,computerCnt+1)}
+
 for _ in range(wormCnt):
     wormCom, Com = map(int, input().split(" "))
     computerNetwork[wormCom].append(Com)
