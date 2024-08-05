@@ -23,7 +23,6 @@ while semesterNotSort:
     semesterNotSort = semesterNotSort - stack
     semesterCount += 1
 
-
 print(' '.join(map(str,semester.values())))
 '''
 
@@ -69,3 +68,4 @@ sortlist = []
 
 
 while(sortlist):
+    pass
