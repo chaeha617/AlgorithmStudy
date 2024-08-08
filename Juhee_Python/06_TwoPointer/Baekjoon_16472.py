@@ -13,6 +13,7 @@ left = 0
 
 for right in range(len(S)):
     char_count[S[right]] += 1
+    print(char_count)
 
     while len(char_count) > N:
         char_count[S[left]] -= 1
