@@ -1,5 +1,3 @@
-from itertools import product
-
 def solution(clothes):
     closet = {}
 
@@ -10,10 +8,6 @@ def solution(clothes):
         else:
             closet[kind] = [name]
 
-    def com_list(**kwargs):
-        vals = kwargs.values()
-        for instance in product(*vals):
-            yield instance
 
     # 모든 조합의 수를 계산
     counts = [len(items) + 1 for items in closet.values()]
@@ -27,6 +21,6 @@ def solution(clothes):
 
 
 
-print(solution([["a", "A"], ["b", "B"], ["c", "C"]]))
-#print(solution([["yellow_hat", "headgear"], ["blue_sunglasses", "eyewear"], ["green_turban", "headgear"]]))
+#print(solution([["a", "A"], ["b", "B"], ["c", "C"]]))
+print(solution([["yellow_hat", "headgear"], ["blue_sunglasses", "eyewear"], ["green_turban", "headgear"]]))
 #print(solution([["crow_mask", "face"], ["blue_sunglasses", "face"], ["smoky_makeup", "face"]]))
