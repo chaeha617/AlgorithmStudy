@@ -10,18 +10,25 @@ N = int(input())
 for i in range(N):
     a, b = input().split(" ")
     if b in itemDic:
-        itemDic[b].add(b)
+        itemDic[b].add(a)
     else:
-        itemDic[b] = set([b])
-    itemSet.update([a,b])
+        itemDic[b] = set([a])
+    itemSet.add(a)
+    itemSet.add(b)
 
 
 itemlist.extend(sorted(list(itemSet - set(itemDic.keys()))))
+
 change = True
 while change:
     change = False
-    for key in itemDic.keys():
-
+    keylist = sorted(list(itemDic.keys()))
+    for key in keylist:
+        buySet = itemDic[key] - set(itemlist)
+        if buySet == set():
+            itemlist.append(key)
+            del itemDic[key]
+            change = True
 
 
 
