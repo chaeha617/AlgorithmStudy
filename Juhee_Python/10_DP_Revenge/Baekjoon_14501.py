@@ -9,10 +9,12 @@ for i in range(N):
 A.reverse()
 A.insert(0, [])
 
+
 for j in range(1,N+1):
     if j < A[j][0]:
         dp[j] = dp[j-1]
     else:
+        print(dp[j-1], A[j][1] + dp[j-A[j][0]])
         dp[j] = max(dp[j-1], A[j][1] + dp[j-A[j][0]])
 
 
