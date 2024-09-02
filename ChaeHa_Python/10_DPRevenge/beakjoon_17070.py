@@ -15,21 +15,17 @@ dp[0][1][0] = 1
 
 for i in range(N):
     for j in range(N):
-        if i == 0 and j == 1:
-            continue
-        for direct in range(3):
-            if field[i][j] == 0:
-                pipe = 0
-                if i - 1 > -1 and j - 1 > -1:  # 대각선 존재
-                    pipe += dp[i-1][j-1][2]
-                # 세로, 대각선의 값 구할때
-                if direct != 0 and i - 1 > -1:
-                    pipe += dp[i-1][j][1]
-                # 가로, 대각선 값 구할때
-                if direct != 1 and j - 1 > -1:
-                    pipe += dp[i][j-1][0]
-                dp[i][j][direct] = pipe
+        if field[i][j] == 0:
+            pipe = 0
+            # 가로, 대각선 값 구할때
+            if j + 1 < N and field[i][j+1] != 1:
+                dp[i][j+1][0] += dp[i][j][0] + dp[i][j][2]
 
-for li in dp:
-    print(li)
-print(max(dp[N-1][N-1]))
+            # 세로, 대각선의 값 구할때
+            if i + 1 < N and field[i+1][j] != 1:
+                dp[i+1][j][1] += dp[i][j][1] + dp[i][j][2]
+
+            if i + 1 < N and j + 1 < N and field[i+1][j+1] != 1 and field[i][j+1] != 1 and field[i+1][j] != 1:  # 대각선 존재
+                dp[i+1][j+1][2] += sum(dp[i][j])
+
+print(sum(dp[N-1][N-1]))
