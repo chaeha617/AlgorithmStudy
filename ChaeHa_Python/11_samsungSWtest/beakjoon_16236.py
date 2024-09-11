@@ -8,7 +8,7 @@ for i in range(N):
     if 9 in row:
         shark = (i, row.index(9))
     field.append(row)
-stack.append(shark, field, 1)
+stack.append(shark, field, 0)
 
 while stack:
     shark, nowField, time = stack.pop()
