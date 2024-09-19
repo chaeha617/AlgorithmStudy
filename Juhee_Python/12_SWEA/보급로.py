@@ -12,15 +12,17 @@ def bfs(N, graph):
     dq = deque([(0,0)])
     while dq:
         x, y = dq.popleft()
+        print(dq)
 
         for i in range(4):
             nx = x + dx[i]
             ny = y + dy[i]
             if 0 <= nx < N and 0 <= ny < N:
-                new_dist = dist[x][y] + graph[nx][ny]
-                if new_dist < dist[nx][ny]:
+                new_dist = dist[x][y] + graph[nx][ny] # 복구 시간 갱신
+                if new_dist < dist[nx][ny]: # 더 작은 복구 시간이면 갱신
                     dist[nx][ny] = new_dist
 
+                    # 이동할 칸의 복구 시간이 0이면 덱의 앞에 추가
                     if graph[nx][ny] == 0:
                         dq.appendleft((nx,ny))
                     else:
