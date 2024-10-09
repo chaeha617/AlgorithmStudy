@@ -1,7 +1,9 @@
+package BOJ;
+
 import java.util.Scanner;
 import java.util.HashSet;
 
-public class Main {
+public class Baekjoon_1316 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int N = sc.nextInt();
