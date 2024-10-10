@@ -1,4 +1,6 @@
 # AlgorithmStudy🍀
+# [📜Notion](https://broadleaf-emu-7be.notion.site/AlgorithmStudy-11034c547b0a80a3af66c23d6b411dab?pvs=4)
+
 
 ## **진행방식**
 
