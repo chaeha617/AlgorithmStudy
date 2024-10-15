@@ -11,7 +11,7 @@ public class baekjoon_1253 {
         int high = numlist.size() - 1;
         int row = 0;
 
-        // 두 포인터를 사용하여 합을 찾습니다.
+        // 투포인터
         while (row < high) {
             int num = numlist.get(row) + numlist.get(high);
             if (findNum == num) {
@@ -36,13 +36,13 @@ public class baekjoon_1253 {
             numberList[i] = scanner.nextInt();
         }
 
-        // numberList를 정렬합니다.
+        // numberList를 정렬
         Arrays.sort(numberList);
         int answer = 0;
 
         for (int idx = 0; idx < numberList.length; idx++) {
             int findNum = numberList[idx];
-            // numlist를 복사하고 현재 인덱스의 값을 제거합니다.
+            // numlist를 복사하고 현재 인덱스의 값을 제거
             List<Integer> numlist = new ArrayList<>();
             for (int num : numberList) {
                 numlist.add(num);
