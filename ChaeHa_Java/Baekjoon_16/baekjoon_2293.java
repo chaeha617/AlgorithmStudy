@@ -53,7 +53,7 @@ public class baekjoon_2293 {
     }
 }
 */
-
+/*
 import java.util.*;
 
 public class baekjoon_2293 {
@@ -94,5 +94,40 @@ public class baekjoon_2293 {
         Collections.sort(coinList);
         System.out.println(coinCount(k,coinList));
 
+    }
+}
+
+ */
+
+import java.util.Scanner;
+
+public class baekjoon_2293 {
+    public static int coinCount(int n, int k, int[] coins) {
+        // dp[i]는 i원을 만들 수 있는 경우의 수
+        int[] dp = new int[k + 1];
+        dp[0] = 1;
+
+        for (int i = 0; i < n; i++) {
+            int coinValue = coins[i];
+            for (int j = coinValue; j <= k; j++) {
+                dp[j] += dp[j - coinValue];
+            }
+        }
+
+        return dp[k];
+    }
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+
+        int n = scan.nextInt();
+        int k = scan.nextInt();
+        int[] coins = new int[n];
+
+        for (int i = 0; i < n; i++) {
+            coins[i] = scan.nextInt();
+        }
+
+        System.out.println(coinCount(n, k, coins));
     }
 }
