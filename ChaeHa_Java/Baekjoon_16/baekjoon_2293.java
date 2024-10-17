@@ -59,18 +59,17 @@ import java.util.*;
 public class baekjoon_2293 {
 
     public static int coinCount(int k, ArrayList<Integer> coinList){
-        ArrayList<Integer> coinDP = new ArrayList<Integer>();
+        ArrayList<Integer> coinDP = new ArrayList<>();
 
         for (int j = 0; j <= k; j++) {
             coinDP.add(1);
         }
 
         for(int i = 0; i <= k; i++){
-            for(int idx = 0; idx < coinList.size(); idx++){
-                int coinValue = coinList.get(idx);
-                if (i - coinValue >= 0){
-                        coinDP.set(i, coinDP.get(i) + coinDP.get(i - coinValue));
-                    }
+            for (int coinValue : coinList) {
+                if (i - coinValue >= 0) {
+                    coinDP.set(i, coinDP.get(i) + coinDP.get(i - coinValue));
+                }
             }
 
         }
@@ -86,11 +85,9 @@ public class baekjoon_2293 {
         scan.nextLine();
 
         ArrayList<Integer> coinList = new ArrayList<>();
-        ArrayList<Integer> coinCountList = new ArrayList<>();
 
         for(int i = 0;i < n; i++){
             coinList.add(Integer.parseInt(scan.nextLine()));
-            coinCountList.add(0);
         }
 
 
