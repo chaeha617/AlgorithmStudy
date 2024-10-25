@@ -39,8 +39,8 @@ class Numbers {
         numberSize = m;
         makeNumbers(numbers, "", m);
         numberList = numberList.stream().distinct().collect(Collectors.toList());
-        for(int numberIdx = 0; numberIdx < numberList.size(); numberIdx++)
-            System.out.println(numberList.get(numberIdx).trim());
+        for (String s : numberList)
+            System.out.println(s.trim());
 
     }
 

@@ -3,8 +3,6 @@ package Baekjoon_17;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.lang.reflect.Array;
-import java.util.ArrayList;
 
 public class baekjoon_2447_recursion {
 
@@ -27,10 +25,8 @@ public class baekjoon_2447_recursion {
             starString[1][1] = "*";
         }
 
-
-
-        for(int row = 0; row > 3; row++) {
-            for (int col = 0; col > 3; col++) {
+        for(int row = 0; row < 3; row++) {
+            for (int col = 0; col < 3; col++) {
                 if (row == 1 && col == 1)
                     continue;
                     //starString.add(" ");
