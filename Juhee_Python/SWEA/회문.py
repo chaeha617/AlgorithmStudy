@@ -1,3 +1,4 @@
+# 틀린 풀이...
 def countNum(graph, N):  # N이 짝수일 때
     num = []
 
