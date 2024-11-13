@@ -37,10 +37,6 @@ public class Main {
         queue2 = new LinkedList<>();
     }
 
-    public static void Add(){
-
-    }
-
     public static void main(String[] args) throws IOException{
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         for(int t = 0; t < 10; t++) {
