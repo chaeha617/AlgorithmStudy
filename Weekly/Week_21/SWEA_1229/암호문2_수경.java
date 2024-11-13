@@ -5,7 +5,7 @@ public class Main {
     static Queue<Integer> queue1;
     static Queue<Integer> queue2;
 
-    public static void Insert(int k, int l, int[] arr) throws IOException {
+    public static void Insert(int k, int[] arr) {
         for(int i = 0; i < k; i++){
             queue2.add(queue1.poll());
         }
@@ -37,6 +37,10 @@ public class Main {
         queue2 = new LinkedList<>();
     }
 
+    public static void Add(){
+
+    }
+
     public static void main(String[] args) throws IOException{
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         for(int t = 0; t < 10; t++) {
@@ -60,7 +64,7 @@ public class Main {
                     for (int j = 0; j < l; j++) {
                         arr[j] = Integer.parseInt(tr.nextToken());
                     }
-                    Insert(k, l, arr);
+                    Insert(k, arr);
                 } else if (s.equals("D")) {
                     Delete(k, l);
                 }
