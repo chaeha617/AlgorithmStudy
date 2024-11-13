@@ -33,6 +33,7 @@ public class Main {
         for(int i = 0; i < queueSize; i++){
             queue2.add(queue1.poll());
         }
+
         queue1 = new LinkedList<>(queue2);
         queue2 = new LinkedList<>();
     }
