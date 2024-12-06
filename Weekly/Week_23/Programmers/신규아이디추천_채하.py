@@ -8,14 +8,16 @@ def solution(new_id):
             if ch == "." and (answer == "" or answer[-1] == "."):
                 continue
             answer += ch
-    if answer and answer[-1] == ".":
-        answer = answer[:-1]
+
     if not answer:
         answer = "a"
+
     if len(answer) > 15:
         answer = answer[:15]
-        if answer[-1] == ".":
-            answer = answer[:-1]
+
+    if answer[-1] == ".":
+        answer = answer[:-1]
+
     while len(answer) < 3:
         answer += answer[-1]
 
