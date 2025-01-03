@@ -22,13 +22,12 @@ public class 햄버거분배_채하 {
         }catch (IOException e){
             System.out.println(e.getMessage());
         }
+
+
         Deque<Character> distance = new LinkedList<>();
         int idx = 0;
         for (char hp : text.toCharArray()){
-            boolean change = false;
-            if(((hp == 'H') && distance.contains('P')) || ((hp == 'P') && distance.contains('H'))) {
-                change = true;
-            }
+            boolean change = ((hp == 'H') && distance.contains('P')) || ((hp == 'P') && distance.contains('H'));
             while(change && !distance.isEmpty()){
                 Character c = distance.poll();
                 if(c != hp && c != 'N'){
