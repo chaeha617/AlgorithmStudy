@@ -3,7 +3,7 @@ package Programmers;
 import java.util.ArrayList;
 import java.util.List;
 
-class Solution {
+class 기능개발 {
     public static int[] solution(int[] progresses, int[] speeds) {
         List<Integer> list = new ArrayList<>();
         int day = 0;
@@ -37,16 +37,5 @@ class Solution {
 
         }
         return list.stream().mapToInt(i -> i).toArray();
-    }
-
-    public static void main(String args[]) {
-        Solution solution = new Solution();
-        int[] input = {93, 30, 55};
-        int[] speed = {1, 30, 5};
-
-        int[] result = solution(input, speed);
-        for (int r: result) {
-            System.out.println(r);
-        }
     }
 }
