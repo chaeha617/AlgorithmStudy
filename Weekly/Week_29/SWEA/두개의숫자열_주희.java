@@ -1,58 +1,63 @@
 package SWEA;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
-class 두개의숫자열_주희
-{
-    public static void main(String args[]) throws Exception
-    {
+class Solution {
+    public static void main(String args[]) throws Exception {
         Scanner sc = new Scanner(System.in);
         int T;
-        T=sc.nextInt();
+        T = sc.nextInt();
 
-
-        for(int test_case = 1; test_case <= T; test_case++)
-        {
+        for (int test_case = 1; test_case <= T; test_case++) {
             int N = sc.nextInt();
             int M = sc.nextInt();
-            List<Integer> A = new ArrayList<>();
-            List<Integer> B = new ArrayList<>();
+
+            int[] A = new int[N];
+            int[] B = new int[M];
 
             for (int i = 0; i < N; i++) {
                 int temp = sc.nextInt();
-                A.add(temp);
+                A[i] = temp;
             }
             for (int i = 0; i < M; i++) {
                 int temp = sc.nextInt();
-                B.add(temp);
+                B[i] = temp;
             }
 
-            int sum = 0;
-            if (N > M) {
-                sum = solution(M, N, B, A);
+            if (N == M) {
+                int answer = isSame(A, B);
+                System.out.println("#" + test_case + " " + answer);
+            } else if (N < M) {
+                int answer = isNotSame(A, B);
+                System.out.println("#" + test_case + " " + answer);
             } else {
-                sum  = solution(N, M, A, B);
+                int answer = isNotSame(B, A);
+                System.out.println("#" + test_case + " " + answer);
             }
-
-            System.out.println("#" + test_case + " " + sum);
-
         }
     }
 
-    public static int solution(int N, int M, List<Integer> A, List<Integer> B) {
-        int sum = 0;
-        for (int i = 0; i < M-N+1; i++) {
-            int temp = 0;
-            for (int j = 0; j < N; j++) {
-                temp += A.get(j) * B.get(i+j);
+    public static int isSame(int[] A, int[] B) {
+        int answer = 0;
+        for (int i = 0; i < A.length; i++) {
+            answer += A[i] * B[i];
+        }
+        return answer;
+    }
+
+    public static int isNotSame(int[] A, int[] B) {
+        int max = 0;
+
+        for (int i = 0; i < B.length - A.length + 1; i++) {
+            int answer = 0;
+            for (int j = 0; j < A.length; j++) {
+                answer += A[j] * B[j+i];
             }
-            if (temp > sum) {
-                sum = temp;
+            if (answer > max) {
+                max = answer;
             }
         }
-        return sum;
+        return max;
     }
 
 
