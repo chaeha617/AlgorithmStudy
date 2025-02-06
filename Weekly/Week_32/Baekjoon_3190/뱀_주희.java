@@ -8,7 +8,7 @@ import java.util.*;
 public class 뱀_주희 {
     static int[][] graph;
     static int N;
-    static int[] dy = {0, 1, 0, -1}; // 동, 남, 서, 북 (시계 방향)
+    static int[] dy = {0, 1, 0, -1};
     static int[] dx = {1, 0, -1, 0};
 
     public static void main(String args[]) throws IOException {
